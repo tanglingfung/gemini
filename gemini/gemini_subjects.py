@@ -20,7 +20,11 @@ class Subject(object):
         self.paternal_id = row['paternal_id']
         self.maternal_id = row['maternal_id']
         self.sex = row['sex']
-        self.phenotype = int(row['phenotype'])
+        #phenotype is set to unknown by default
+        if row['phenotype'] is None:
+            self.phenotype = -9
+        else
+            self.phenotype = int(row['phenotype'])
         self.ethnicity = row['ethnicity']
 
         # 1 = unaffected
